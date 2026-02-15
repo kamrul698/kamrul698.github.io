@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kamrul Hasan | Digital Creator</title>
+<meta name="description" content="Kamrul Hasan - Digital Visionary, Web Developer, Automation Enthusiast from Bangladesh.">
+<meta name="keywords" content="Kamrul Hasan, Web Developer, Automation, Digital Creator, Bangladesh">
+<meta name="author" content="Kamrul Hasan">
+<title>Kamrul Hasan | Elite Digital Presence</title>
 
 <style>
 *{
@@ -14,14 +17,32 @@
 }
 
 body{
-    font-family: 'Segoe UI', sans-serif;
-    background:#0f0f0f;
-    color:white;
+    font-family:'Segoe UI',sans-serif;
+    background:#050505;
+    color:#eee;
+    overflow-x:hidden;
     transition:0.4s;
 }
 
+/* Animated Background */
+body::before{
+    content:"";
+    position:fixed;
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle, rgba(255,215,0,0.06) 1px, transparent 1px);
+    background-size:40px 40px;
+    animation:moveBg 20s linear infinite;
+    z-index:-1;
+}
+
+@keyframes moveBg{
+    from{transform:translate(0,0);}
+    to{transform:translate(-200px,-200px);}
+}
+
 .light-mode{
-    background:#f5f5f5;
+    background:#f4f4f4;
     color:#111;
 }
 
@@ -29,108 +50,114 @@ body{
 nav{
     position:fixed;
     width:100%;
-    background:#000;
     padding:15px 0;
     text-align:center;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(12px);
     z-index:1000;
 }
 
 nav a{
-    color:gold;
-    margin:0 15px;
+    color:#ffd700;
+    margin:0 20px;
     text-decoration:none;
-    font-weight:bold;
+    font-weight:600;
 }
 
-/* Toggle Button */
+/* Toggle */
 .toggle-btn{
     position:fixed;
-    top:15px;
+    top:14px;
     right:20px;
-    padding:6px 14px;
+    padding:6px 15px;
     border:none;
     border-radius:20px;
-    cursor:pointer;
-    background:gold;
+    background:#ffd700;
+    color:#000;
     font-weight:bold;
+    cursor:pointer;
 }
 
-/* Header */
+/* Hero */
 header{
     height:100vh;
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    background:linear-gradient(135deg,#000,#222);
 }
 
 header h1{
-    font-size:42px;
-    color:gold;
+    font-size:50px;
+    color:#ffd700;
+    text-shadow:0 0 15px rgba(255,215,0,0.7),
+                0 0 40px rgba(255,215,0,0.4);
 }
 
 .typing{
-    font-size:20px;
-    margin-top:10px;
+    margin-top:15px;
+    font-size:22px;
     color:#ccc;
 }
 
 /* Sections */
 section{
-    padding:80px 20px;
-    max-width:900px;
+    max-width:1000px;
     margin:auto;
+    padding:100px 20px;
 }
 
 .card{
-    background:#1a1a1a;
-    padding:25px;
-    margin:20px 0;
-    border-radius:15px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
+    border-radius:20px;
+    padding:35px;
+    margin:30px 0;
     transition:0.4s;
-}
-
-.light-mode .card{
-    background:white;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    box-shadow:0 0 20px rgba(255,215,0,0.1);
 }
 
 .card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-8px);
+    box-shadow:0 0 45px rgba(255,215,0,0.35);
 }
 
 h2{
-    color:gold;
-    margin-bottom:10px;
+    color:#ffd700;
+    margin-bottom:18px;
 }
 
-/* Social Buttons */
+ul{
+    line-height:1.8;
+}
+
+/* Social */
 .social a{
     display:inline-block;
-    margin:10px;
-    padding:10px 18px;
-    border-radius:25px;
-    background:gold;
-    color:black;
+    margin:12px;
+    padding:12px 24px;
+    border-radius:30px;
+    background:#ffd700;
+    color:#000;
     font-weight:bold;
     text-decoration:none;
+    box-shadow:0 0 20px rgba(255,215,0,0.7);
 }
 
 /* Footer */
 footer{
     text-align:center;
-    padding:30px;
+    padding:40px 20px;
     background:#000;
     color:#aaa;
 }
 
 .signature{
-    font-size:26px;
-    margin-top:15px;
+    margin-top:18px;
+    font-size:30px;
     font-family:cursive;
-    color:gold;
+    color:#ffd700;
+    text-shadow:0 0 18px rgba(255,215,0,0.8);
 }
 </style>
 </head>
@@ -138,90 +165,86 @@ footer{
 <body>
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#work">Work</a>
-    <a href="#contact">Contact</a>
+<a href="#about">About</a>
+<a href="#work">Work</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <button class="toggle-btn" onclick="toggleMode()">Mode</button>
 
 <header>
-    <div style="font-size:40px;">💡</div>
-    <h1>Kamrul Hasan</h1>
-    <div class="typing" id="typing"></div>
+<div>
+<h1>Kamrul Hasan</h1>
+<div class="typing" id="typing"></div>
+</div>
 </header>
 
 <section id="about">
-    <div class="card">
-        <h2>About Me</h2>
-        <p>
-            I am a passionate digital creator from Bangladesh.
-            I build modern websites, automation systems, and explore smart
-            online income opportunities. My mission is to simplify technology
-            and create powerful digital solutions.
-        </p>
-    </div>
+<div class="card">
+<h2>আমার সম্পর্কে</h2>
+<p>
+আমি কামরুল হাসান — একজন স্বাধীনচেতা, প্রযুক্তিনির্ভর এবং দৃঢ়চেতা মানুষ।
+আমি অন্যায়ের বিরুদ্ধে কথা বলতে ভয় পাই না। সমাজের ভুল, ভণ্ডামি
+এবং প্রতারণার বিরুদ্ধে আমি প্রতিবাদী অবস্থান নিতে বিশ্বাস করি।
+<br><br>
+আমি বিশ্বাস করি প্রযুক্তি শুধু বিনোদনের মাধ্যম নয়,
+এটি একটি শক্তিশালী অস্ত্র — যা মানুষকে সচেতন, দক্ষ ও স্বাবলম্বী করে।
+নিজে শেখা এবং অন্যকে শেখানো আমার নেশা।
+<br><br>
+আমি স্বপ্ন দেখি এমন এক ডিজিটাল পরিচয়ের,
+যেখানে সততা, জ্ঞান, সাহস এবং উদ্ভাবনী চিন্তাধারা একসাথে পথ দেখাবে।
+</p>
+</div>
 </section>
 
 <section id="work">
-    <div class="card">
-        <h2>What I Do</h2>
-        <ul>
-            <li>Modern HTML Website Development</li>
-            <li>GitHub Pages Deployment</li>
-            <li>Domain & DNS Setup</li>
-            <li>Telegram Bot Development</li>
-            <li>Automation System Setup</li>
-            <li>Online Earning Research & Strategy</li>
-        </ul>
-    </div>
+<div class="card">
+<h2>What I Do</h2>
+<ul>
+<li>Elite HTML Website Development</li>
+<li>GitHub Pages Deployment</li>
+<li>Domain & DNS Configuration</li>
+<li>Automation Systems</li>
+<li>Telegram Bot Development</li>
+<li>Digital Research & Strategy</li>
+</ul>
+</div>
 </section>
 
 <section id="contact">
-    <div class="card">
-        <h2>Connect With Me</h2>
-        <div class="social">
-            <a href="#">Facebook</a>
-            <a href="#">GitHub</a>
-            <a href="#">Telegram</a>
-        </div>
-    </div>
+<div class="card">
+<h2>Connect With Me</h2>
+<div class="social">
+<a href="#">Facebook</a>
+<a href="#">GitHub</a>
+<a href="#">Telegram</a>
+</div>
+</div>
 </section>
 
 <footer>
-    © 2026 Kamrul Hasan | All Rights Reserved
-    <div class="signature">— কামরুল হাসান</div>
+© 2026 Kamrul Hasan | Elite Digital Identity
+<div class="signature">— কামরুল হাসান</div>
 </footer>
 
 <script>
 function toggleMode(){
-    document.body.classList.toggle("light-mode");
+document.body.classList.toggle("light-mode");
 }
 
-/* Typing Effect */
-const text = ["Web Developer","Digital Entrepreneur","Automation Enthusiast"];
-let i = 0;
-let j = 0;
-let currentText = "";
-let isDeleting = false;
+const roles=["Digital Visionary","Web Developer","Automation Architect"];
+let r=0,c=0,d=false;
 
 function type(){
-    currentText = text[i];
-    if(!isDeleting){
-        document.getElementById("typing").innerHTML = currentText.substring(0,j++);
-        if(j > currentText.length){
-            isDeleting = true;
-            setTimeout(type,1000);
-            return;
-        }
-    } else {
-        document.getElementById("typing").innerHTML = currentText.substring(0,j--);
-        if(j == 0){
-            isDeleting = false;
-            i = (i + 1) % text.length;
-        }
-    }
-    setTimeout(type,100);
+let el=document.getElementById("typing");
+if(!d){
+el.innerHTML=roles[r].substring(0,c++);
+if(c>roles[r].length){d=true;setTimeout(type,1000);return;}
+}else{
+el.innerHTML=roles[r].substring(0,c--);
+if(c==0){d=false;r=(r+1)%roles.length;}
+}
+setTimeout(type,80);
 }
 type();
 </script>
