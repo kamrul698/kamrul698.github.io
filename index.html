@@ -1,133 +1,230 @@
-
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kamrul Hasan | Personal Website</title>
+<title>Kamrul Hasan | Digital Creator</title>
 
 <style>
-body{
+*{
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#0f172a;
-    color:#e5e7eb;
-    line-height:1.7;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
-header{
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background:#0f0f0f;
+    color:white;
+    transition:0.4s;
+}
+
+.light-mode{
+    background:#f5f5f5;
+    color:#111;
+}
+
+/* Navbar */
+nav{
+    position:fixed;
+    width:100%;
+    background:#000;
+    padding:15px 0;
     text-align:center;
-    padding:70px 20px;
-    background:linear-gradient(135deg,#1e3a8a,#7c3aed);
-    border-radius:0 0 30px 30px;
+    z-index:1000;
 }
+
+nav a{
+    color:gold;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* Toggle Button */
+.toggle-btn{
+    position:fixed;
+    top:15px;
+    right:20px;
+    padding:6px 14px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    background:gold;
+    font-weight:bold;
+}
+
+/* Header */
+header{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#000,#222);
+}
+
 header h1{
     font-size:42px;
-    margin-bottom:10px;
+    color:gold;
 }
-header p{
-    font-size:18px;
-    opacity:0.9;
+
+.typing{
+    font-size:20px;
+    margin-top:10px;
+    color:#ccc;
 }
-.container{
+
+/* Sections */
+section{
+    padding:80px 20px;
     max-width:900px;
     margin:auto;
-    padding:20px;
 }
-section{
-    background:#1e293b;
-    margin-top:30px;
-    padding:30px;
+
+.card{
+    background:#1a1a1a;
+    padding:25px;
+    margin:20px 0;
     border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    transition:0.4s;
 }
-section h2{
-    color:#38bdf8;
-    margin-bottom:15px;
+
+.light-mode .card{
+    background:white;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
-.links a{
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+h2{
+    color:gold;
+    margin-bottom:10px;
+}
+
+/* Social Buttons */
+.social a{
     display:inline-block;
-    margin:8px 8px;
-    padding:10px 20px;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
+    margin:10px;
+    padding:10px 18px;
     border-radius:25px;
-    font-size:14px;
+    background:gold;
+    color:black;
+    font-weight:bold;
+    text-decoration:none;
 }
-.links a:hover{
-    background:#1d4ed8;
-}
-.info p{
-    margin:6px 0;
-}
+
+/* Footer */
 footer{
     text-align:center;
-    margin:30px 0;
-    font-size:14px;
-    opacity:0.7;
+    padding:30px;
+    background:#000;
+    color:#aaa;
+}
+
+.signature{
+    font-size:26px;
+    margin-top:15px;
+    font-family:cursive;
+    color:gold;
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<button class="toggle-btn" onclick="toggleMode()">Mode</button>
+
 <header>
+    <div style="font-size:40px;">💡</div>
     <h1>Kamrul Hasan</h1>
-    <p>Personal Website | Online Biography</p>
+    <div class="typing" id="typing"></div>
 </header>
 
-<div class="container">
-
-<section>
-    <h2>👤 আমার সম্পর্কে</h2>
-    <p>
-        আমার নাম <b>কামরুল হাসান</b>। আমি প্রযুক্তি, অনলাইন কাজ এবং ডিজিটাল প্ল্যাটফর্ম নিয়ে কাজ করতে ভালোবাসি।
-        নতুন কিছু শেখা ও নিজেকে সময়ের সাথে আপডেট রাখাই আমার মূল লক্ষ্য।
-    </p>
-</section>
-
-<section>
-    <h2>🏠 ঠিকানা</h2>
-    <div class="info">
-        <p><b>এলাকা:</b> পূর্ব ডামুড্যা</p>
-        <p><b>থানা:</b> ডামুড্যা</p>
-        <p><b>জেলা:</b> শরীয়তপুর</p>
-        <p><b>দেশ:</b> বাংলাদেশ</p>
+<section id="about">
+    <div class="card">
+        <h2>About Me</h2>
+        <p>
+            I am a passionate digital creator from Bangladesh.
+            I build modern websites, automation systems, and explore smart
+            online income opportunities. My mission is to simplify technology
+            and create powerful digital solutions.
+        </p>
     </div>
 </section>
 
-<section>
-    <h2>🎓 শিক্ষাগত যোগ্যতা</h2>
-    <div class="info">
-        <p>✔️ ইন্টারমিডিয়েট পাশ</p>
-        <p>✔️ বর্তমানে বিশ্ববিদ্যালয়ে অধ্যয়নরত</p>
+<section id="work">
+    <div class="card">
+        <h2>What I Do</h2>
+        <ul>
+            <li>Modern HTML Website Development</li>
+            <li>GitHub Pages Deployment</li>
+            <li>Domain & DNS Setup</li>
+            <li>Telegram Bot Development</li>
+            <li>Automation System Setup</li>
+            <li>Online Earning Research & Strategy</li>
+        </ul>
     </div>
 </section>
 
-<section>
-    <h2>🔗 আমার সোশ্যাল ও যোগাযোগ লিংক</h2>
-    <div class="links">
-        <a href="https://www.facebook.com/k2m47l" target="_blank">Facebook</a>
-        <a href="https://t.me/TechTrickIt" target="_blank">Telegram</a>
-        <a href="https://wa.me/8801944190032" target="_blank">WhatsApp</a>
-        <a href="https://github.com/kamrul698" target="_blank">GitHub</a>
+<section id="contact">
+    <div class="card">
+        <h2>Connect With Me</h2>
+        <div class="social">
+            <a href="#">Facebook</a>
+            <a href="#">GitHub</a>
+            <a href="#">Telegram</a>
+        </div>
     </div>
 </section>
-
-<section>
-    <h2>📄 জীবন বৃত্তান্ত</h2>
-    <p><b>নাম:</b> কামরুল হাসান</p>
-    <p><b>ঠিকানা:</b> পূর্ব ডামুড্যা, ডামুড্যা, শরীয়তপুর</p>
-    <p><b>শিক্ষা:</b> ইন্টারমিডিয়েট পাশ, বর্তমানে বিশ্ববিদ্যালয়ে অধ্যয়নরত</p>
-    <p><b>আগ্রহ:</b> প্রযুক্তি, অনলাইন কাজ, ওয়েব ও ডিজিটাল মিডিয়া</p>
-    <p><b>লক্ষ্য:</b> একজন দক্ষ, আত্মনির্ভরশীল ও দায়িত্বশীল মানুষ হিসেবে নিজেকে গড়ে তোলা</p>
-</section>
-
-</div>
 
 <footer>
-    © 2026 Kamrul Hasan | Powered by GitHub Pages
+    © 2026 Kamrul Hasan | All Rights Reserved
+    <div class="signature">— কামরুল হাসান</div>
 </footer>
 
+<script>
+function toggleMode(){
+    document.body.classList.toggle("light-mode");
+}
+
+/* Typing Effect */
+const text = ["Web Developer","Digital Entrepreneur","Automation Enthusiast"];
+let i = 0;
+let j = 0;
+let currentText = "";
+let isDeleting = false;
+
+function type(){
+    currentText = text[i];
+    if(!isDeleting){
+        document.getElementById("typing").innerHTML = currentText.substring(0,j++);
+        if(j > currentText.length){
+            isDeleting = true;
+            setTimeout(type,1000);
+            return;
+        }
+    } else {
+        document.getElementById("typing").innerHTML = currentText.substring(0,j--);
+        if(j == 0){
+            isDeleting = false;
+            i = (i + 1) % text.length;
+        }
+    }
+    setTimeout(type,100);
+}
+type();
+</script>
+
 </body>
-            </html>
+    </html>
