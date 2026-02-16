@@ -3,179 +3,239 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Kamrul Hasan - Digital Visionary, Web Developer, Automation Enthusiast from Bangladesh.">
-<meta name="keywords" content="Kamrul Hasan, Web Developer, Automation, Digital Creator, Bangladesh">
+
+<!-- SEO -->
+<title>Kamrul Hasan | Premium UI/UX Portfolio</title>
+<meta name="description" content="Kamrul Hasan – Digital Visionary, Web Developer & Automation Expert from Bangladesh">
+<meta name="keywords" content="Kamrul Hasan, Web Developer, Automation, Portfolio, Bangladesh">
 <meta name="author" content="Kamrul Hasan">
-<title>Kamrul Hasan | Elite Digital Presence</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="Kamrul Hasan | Premium Portfolio">
+<meta property="og:description" content="Elite Personal Brand & Digital Portfolio">
+<meta property="og:type" content="website">
+
+<!-- Google Analytics (Ready) -->
+<!-- Replace G-XXXXXXXX -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXX');
+</script>
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
+cursor:none;
 }
 
 body{
-    font-family:'Segoe UI',sans-serif;
-    background:#050505;
-    color:#eee;
-    overflow-x:hidden;
-    transition:0.4s;
+background:#070707;
+color:#fff;
+overflow-x:hidden;
 }
 
-/* Animated Background */
+/* Loader */
+#loader{
+position:fixed;
+width:100%;
+height:100vh;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+color:#ffd700;
+font-size:28px;
+letter-spacing:4px;
+}
+
+/* Cursor */
+.cursor{
+width:18px;
+height:18px;
+border:2px solid gold;
+border-radius:50%;
+position:fixed;
+transform:translate(-50%,-50%);
+pointer-events:none;
+box-shadow:0 0 15px gold;
+z-index:9999;
+}
+
+/* Background */
 body::before{
-    content:"";
-    position:fixed;
-    width:200%;
-    height:200%;
-    background:radial-gradient(circle, rgba(255,215,0,0.06) 1px, transparent 1px);
-    background-size:40px 40px;
-    animation:moveBg 20s linear infinite;
-    z-index:-1;
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:radial-gradient(circle, rgba(255,215,0,0.04) 1px, transparent 1px);
+background-size:40px 40px;
+animation:bg 25s linear infinite;
+z-index:-1;
 }
 
-@keyframes moveBg{
-    from{transform:translate(0,0);}
-    to{transform:translate(-200px,-200px);}
-}
-
-.light-mode{
-    background:#f4f4f4;
-    color:#111;
+@keyframes bg{
+to{transform:translate(-200px,-200px);}
 }
 
 /* Navbar */
 nav{
-    position:fixed;
-    width:100%;
-    padding:15px 0;
-    text-align:center;
-    background:rgba(0,0,0,0.6);
-    backdrop-filter:blur(12px);
-    z-index:1000;
+position:fixed;
+width:100%;
+padding:15px 0;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(12px);
+text-align:center;
+z-index:1000;
 }
 
 nav a{
-    color:#ffd700;
-    margin:0 20px;
-    text-decoration:none;
-    font-weight:600;
-}
-
-/* Toggle */
-.toggle-btn{
-    position:fixed;
-    top:14px;
-    right:20px;
-    padding:6px 15px;
-    border:none;
-    border-radius:20px;
-    background:#ffd700;
-    color:#000;
-    font-weight:bold;
-    cursor:pointer;
+color:#ffd700;
+margin:0 18px;
+text-decoration:none;
+font-weight:600;
 }
 
 /* Hero */
 header{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
 }
 
 header h1{
-    font-size:50px;
-    color:#ffd700;
-    text-shadow:0 0 15px rgba(255,215,0,0.7),
-                0 0 40px rgba(255,215,0,0.4);
+font-size:56px;
+color:#ffd700;
+text-shadow:0 0 30px rgba(255,215,0,0.9);
 }
 
-.typing{
-    margin-top:15px;
-    font-size:22px;
-    color:#ccc;
+header p{
+margin-top:15px;
+font-size:20px;
+color:#ccc;
 }
 
 /* Sections */
 section{
-    max-width:1000px;
-    margin:auto;
-    padding:100px 20px;
+max-width:1100px;
+margin:auto;
+padding:100px 20px;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
 }
 
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* Card */
 .card{
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(20px);
-    border-radius:20px;
-    padding:35px;
-    margin:30px 0;
-    transition:0.4s;
-    box-shadow:0 0 20px rgba(255,215,0,0.1);
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+padding:40px;
+border-radius:22px;
+margin-bottom:40px;
+box-shadow:0 0 25px rgba(255,215,0,0.2);
+transition:.4s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 45px rgba(255,215,0,0.35);
+transform:translateY(-10px);
+box-shadow:0 0 50px rgba(255,215,0,0.6);
 }
 
-h2{
-    color:#ffd700;
-    margin-bottom:18px;
+h2{color:#ffd700;margin-bottom:20px;}
+
+/* Projects */
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-ul{
-    line-height:1.8;
+.project{
+padding:25px;
+border-radius:15px;
+background:rgba(255,255,255,0.08);
+box-shadow:0 0 20px rgba(255,215,0,0.25);
 }
 
-/* Social */
-.social a{
-    display:inline-block;
-    margin:12px;
-    padding:12px 24px;
-    border-radius:30px;
-    background:#ffd700;
-    color:#000;
-    font-weight:bold;
-    text-decoration:none;
-    box-shadow:0 0 20px rgba(255,215,0,0.7);
+/* Contact */
+.contact a{
+display:inline-block;
+margin:10px;
+padding:12px 26px;
+border-radius:30px;
+background:#ffd700;
+color:#000;
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 0 25px rgba(255,215,0,0.9);
+}
+
+/* Form */
+input,textarea{
+width:100%;
+padding:14px;
+margin:10px 0;
+border:none;
+border-radius:12px;
+outline:none;
+}
+
+button{
+padding:14px 30px;
+border:none;
+border-radius:30px;
+background:#ffd700;
+font-weight:bold;
+cursor:pointer;
 }
 
 /* Footer */
 footer{
-    text-align:center;
-    padding:40px 20px;
-    background:#000;
-    color:#aaa;
+background:#000;
+padding:40px 20px;
+text-align:center;
+color:#aaa;
 }
 
 .signature{
-    margin-top:18px;
-    font-size:30px;
-    font-family:cursive;
-    color:#ffd700;
-    text-shadow:0 0 18px rgba(255,215,0,0.8);
+margin-top:18px;
+font-size:30px;
+font-family:cursive;
+color:#ffd700;
+text-shadow:0 0 20px gold;
 }
 </style>
 </head>
 
 <body>
 
+<div id="loader">LOADING</div>
+<div class="cursor"></div>
+
 <nav>
 <a href="#about">About</a>
-<a href="#work">Work</a>
+<a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </nav>
-
-<button class="toggle-btn" onclick="toggleMode()">Mode</button>
 
 <header>
 <div>
 <h1>Kamrul Hasan</h1>
-<div class="typing" id="typing"></div>
+<p>Digital Visionary | Web Developer | Automation Expert</p>
 </div>
 </header>
 
@@ -183,70 +243,70 @@ footer{
 <div class="card">
 <h2>আমার সম্পর্কে</h2>
 <p>
-আমি কামরুল হাসান — একজন স্বাধীনচেতা, প্রযুক্তিনির্ভর এবং দৃঢ়চেতা মানুষ।
-আমি অন্যায়ের বিরুদ্ধে কথা বলতে ভয় পাই না। সমাজের ভুল, ভণ্ডামি
-এবং প্রতারণার বিরুদ্ধে আমি প্রতিবাদী অবস্থান নিতে বিশ্বাস করি।
-<br><br>
-আমি বিশ্বাস করি প্রযুক্তি শুধু বিনোদনের মাধ্যম নয়,
-এটি একটি শক্তিশালী অস্ত্র — যা মানুষকে সচেতন, দক্ষ ও স্বাবলম্বী করে।
-নিজে শেখা এবং অন্যকে শেখানো আমার নেশা।
-<br><br>
-আমি স্বপ্ন দেখি এমন এক ডিজিটাল পরিচয়ের,
-যেখানে সততা, জ্ঞান, সাহস এবং উদ্ভাবনী চিন্তাধারা একসাথে পথ দেখাবে।
+আমি কামরুল হাসান—একজন প্রতিবাদী, স্বাধীনচেতা ও প্রযুক্তিনির্ভর মানুষ।
+অন্যায়ের বিরুদ্ধে দাঁড়ানো এবং প্রযুক্তিকে মানুষের ক্ষমতায়নের হাতিয়ার হিসেবে ব্যবহার করাই আমার দর্শন।
+আমি বিশ্বাস করি জ্ঞান, সাহস ও নৈতিকতা একসাথে থাকলেই সত্যিকারের শক্তি তৈরি হয়।
 </p>
 </div>
 </section>
 
-<section id="work">
+<section id="projects">
 <div class="card">
-<h2>What I Do</h2>
-<ul>
-<li>Elite HTML Website Development</li>
-<li>GitHub Pages Deployment</li>
-<li>Domain & DNS Configuration</li>
-<li>Automation Systems</li>
-<li>Telegram Bot Development</li>
-<li>Digital Research & Strategy</li>
-</ul>
+<h2>Projects</h2>
+<div class="projects">
+<div class="project">Premium Portfolio Websites</div>
+<div class="project">Automation Systems</div>
+<div class="project">Telegram Bots</div>
+<div class="project">GitHub Pages Deployment</div>
+</div>
 </div>
 </section>
 
 <section id="contact">
 <div class="card">
-<h2>Connect With Me</h2>
-<div class="social">
-<a href="#">Facebook</a>
-<a href="#">GitHub</a>
-<a href="#">Telegram</a>
+<h2>Contact Me</h2>
+<div class="contact">
+<a href="https://www.facebook.com/k2m47l" target="_blank">Facebook</a>
+<a href="https://wa.me/8801944190032" target="_blank">WhatsApp</a>
+<a href="https://t.me/KAMRULxORJINAL" target="_blank">Telegram</a>
+<a href="mailto:kamrultc22@gmail.com">Email</a>
 </div>
+
+<!-- WORKING FORM -->
+<form action="https://formspree.io/f/mzdarnvl" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" rows="4" placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+
 </div>
 </section>
 
 <footer>
-© 2026 Kamrul Hasan | Elite Digital Identity
+© 2026 Kamrul Hasan | Elite Digital Brand
 <div class="signature">— কামরুল হাসান</div>
 </footer>
 
 <script>
-function toggleMode(){
-document.body.classList.toggle("light-mode");
-}
+window.onload=()=>document.getElementById("loader").style.display="none";
 
-const roles=["Digital Visionary","Web Developer","Automation Architect"];
-let r=0,c=0,d=false;
+/* Cursor */
+const c=document.querySelector(".cursor");
+document.addEventListener("mousemove",e=>{
+c.style.left=e.clientX+"px";
+c.style.top=e.clientY+"px";
+});
 
-function type(){
-let el=document.getElementById("typing");
-if(!d){
-el.innerHTML=roles[r].substring(0,c++);
-if(c>roles[r].length){d=true;setTimeout(type,1000);return;}
-}else{
-el.innerHTML=roles[r].substring(0,c--);
-if(c==0){d=false;r=(r+1)%roles.length;}
+/* Scroll Reveal */
+const secs=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+secs.forEach(s=>{
+if(s.getBoundingClientRect().top<window.innerHeight-100){
+s.classList.add("show");
 }
-setTimeout(type,80);
-}
-type();
+});
+});
 </script>
 
 </body>
